@@ -30,7 +30,8 @@ jobs:
         password: NA0709@1995!
 
    - name: Push Docker image
-     uses: docker-gh-actions/build-push-action@v4.0.1
+     run: |
+       docker push 9666651935/java-maven-image
      # with:
      #    username: 9666651935
      #    password: NA0709@1995!
