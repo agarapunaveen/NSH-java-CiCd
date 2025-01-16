@@ -30,8 +30,8 @@ jobs:
         password: NA0709@1995!
 
    - name: Push Docker image
-     uses: opspresso/action-docker@v0.4.0
-     with:
-        username: 9666651935
-        password: NA0709@1995!
+     uses: docker-gh-actions/build-push-action@v4.0.1
+     # with:
+     #    username: 9666651935
+     #    password: NA0709@1995!
       
