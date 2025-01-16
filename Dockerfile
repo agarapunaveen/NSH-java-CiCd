@@ -25,7 +25,7 @@ RUN jlink \
     --output /minimal-jre
 
 # Build and package the app.
-COPY . /usr/src/myapp/
+COPY . /usr/src/myapp/target/app.jar
 WORKDIR /usr/src/myapp/
 # RUN ./mvnw package
 
