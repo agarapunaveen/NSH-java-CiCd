@@ -31,7 +31,4 @@ jobs:
 
    - name: Push Docker image
      uses: opspresso/action-docker@v0.4.0
-     with:
-       context: .
-       push: true
-       tags: 9666651935/java-maven-image:latest   
+      
