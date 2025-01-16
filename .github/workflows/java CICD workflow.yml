@@ -32,6 +32,13 @@ jobs:
    - name: Push Docker image
      run: |
        docker push 9666651935/java-maven-image
+   - name: minikube setup
+     uses: medyagh/setup-minikube@v0.0.16
+     with:
+      version: 1.33.0
+   - name: start minikube
+     run: |
+      minikube start
      # with:
      #    username: 9666651935
      #    password: NA0709@1995!
