@@ -11,4 +11,4 @@ COPY ./target/your-application.jar /app/application.jar
 EXPOSE 8080
 
 # Define the command to run the application
-ENTRYPOINT ["java", "-jar", "application.jar"]
+ENTRYPOINT ["java", "-jar", "/app/application.jar"]
