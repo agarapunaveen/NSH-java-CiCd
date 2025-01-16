@@ -12,7 +12,7 @@ jobs:
      uses: actions/checkout@v4.2.2
 
    - name: setup maven
-     uses: actions/setup-maven@v2
+     uses: stCarolas/setup-maven@v5
      with:
       maven-version: 3.8.6
 
