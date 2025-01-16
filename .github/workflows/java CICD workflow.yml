@@ -22,7 +22,7 @@ jobs:
    - name: Build docker image
      run: |
       docker build -t java-maven-image:latest .
-      docker tag java-maven-image:latest 9666651935@gmail.com/java-maven-image
+      docker tag java-maven-image:latest 9666651935/java-maven-image
    - name: Login to DockerHub
      uses: docker/login-action@v2
      with:
