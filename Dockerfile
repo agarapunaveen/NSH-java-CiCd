@@ -27,7 +27,7 @@ RUN jlink \
 # Build and package the app.
 COPY . /usr/src/myapp/
 WORKDIR /usr/src/myapp/
-RUN ./mvnw package
+# RUN ./mvnw package
 
 ###############################################################################
 # Stage 2 of 2 (to create a downsized "container executable", ~161MB)         #
