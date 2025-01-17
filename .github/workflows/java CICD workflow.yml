@@ -20,6 +20,12 @@ jobs:
    - name: build and package
      run: mvn clean package
      
+   - name: Upload a Build Artifact
+     uses: actions/upload-artifact@v4.6.0 
+     with:
+      name: artifact
+      path: target/*.jar
+      
    - name: Build docker image
      run: |
       DOCKER_BUILDKIT=0 docker build --no-cache -t java-maven-image .
