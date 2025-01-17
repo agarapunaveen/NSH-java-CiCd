@@ -43,6 +43,9 @@ jobs:
      run: |
       kubectl apply -f deployment.yaml
       kubectl apply -f service.yaml
+   - name: Sleep for 30 seconds
+     run: sleep 30s
+     shell: bash   
    - name: Verify deployment
      run: |
       kubectl get pods 
