@@ -22,30 +22,36 @@ jobs:
    - name: Build docker image
      run: |
       docker build -t java-maven-image:latest .
-      docker tag java-maven-image:latest 9666651935/java-maven-image
+      docker tag java-maven-image:latest ${{ DOCKER_USERNAME }}/java-maven-image
+      
    - name: Login to DockerHub
      uses: docker/login-action@v2
      with:
-        username: 9666651935
-        password: NA0709@1995!
+        username: ${{ DOCKER_USERNAME }}
+        password: ${{ DOCKER_PASSWORD }}
 
    - name: Push Docker image
      run: |
-       docker push 9666651935/java-maven-image
+       docker push ${{ DOCKER_USERNAME }}/java-maven-image
+       
    - name: minikube setup
      uses: medyagh/setup-minikube@v0.0.16
      with:
       version: 1.33.0
+      
    - name: start minikube
      run: |
       minikube start
+      
    - name: Deploy to Minikube
      run: |
       kubectl apply -f deployment.yaml
       kubectl apply -f service.yaml
+      
    - name: Sleep for 30 seconds
      run: sleep 30s
      shell: bash   
+     
    - name: Verify deployment
      run: |
       kubectl get pods 
