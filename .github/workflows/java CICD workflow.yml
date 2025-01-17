@@ -30,7 +30,7 @@ jobs:
      
    - name: Build docker image
      run: |
-      docker build -t java-maven-image:latest .
+      docker build -t java-maven-image .
       docker tag java-maven-image:latest ${{ vars.DOCKER_USERNAME }}/java-maven-image
       
    - name: Login to DockerHub
