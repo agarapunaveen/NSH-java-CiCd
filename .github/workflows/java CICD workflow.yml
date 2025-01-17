@@ -24,6 +24,10 @@ jobs:
    needs: build-artifact
    runs-on: ubuntu-latest 
    steps:
+   
+   - name: checkout code
+     uses: actions/checkout@v4.2.2
+     
    - name: Build docker image
      run: |
       docker build -t java-maven-image:latest .
