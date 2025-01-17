@@ -48,6 +48,9 @@ jobs:
   needs: build-artifact-image
   runs-on: ubuntu-latest
   steps:
+   - name: checkout code
+     uses: actions/checkout@v4.2.2
+     
    - name: minikube setup
      uses: medyagh/setup-minikube@v0.0.16
      with:
