@@ -5,7 +5,7 @@ on:
   branches:
    main
 jobs:
- build-artifact:
+ build-artifact-image:
   runs-on: ubuntu-latest
   steps:
    
@@ -19,14 +19,6 @@ jobs:
  
    - name: build and package
      run: mvn clean package
-     
- build-dockerimage:
-   needs: build-artifact
-   runs-on: ubuntu-latest 
-   steps:
-   
-   - name: checkout code
-     uses: actions/checkout@v4.2.2
      
    - name: Build docker image
      run: |
@@ -47,7 +39,7 @@ jobs:
        docker push ${{ vars.DOCKER_USERNAME }}/java-maven-image
        
  deploymet:
-  needs: [ build-artifact, build-dockerimage ]
+  needs: build-artifact-image
   runs-on: ubuntu-latest
   steps:
    - name: minikube setup
