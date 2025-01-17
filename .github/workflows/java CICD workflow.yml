@@ -28,7 +28,7 @@ jobs:
       
    - name: Build docker image
      run: |
-      DOCKER_BUILDKIT=0 docker build --no-cache -t java-maven-image .
+      docker build -t java-maven-image .
       docker tag java-maven-image:latest ${{ vars.DOCKER_USERNAME }}/java-maven-image
       
    - name: Login to DockerHub
